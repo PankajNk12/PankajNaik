@@ -1,44 +1,39 @@
-import React ,{useState} from 'react';
+import React ,{useState, Usestate} from 'react';
 import './login.css'
 const Login=()=>
 {
-    const [email,setEmail] =useState('')
-    const [password,setPassword] =useState('')
+    const[email,setEmail]=useState('')
+    const[password,setPassword]=useState('')
     const handleSubmit=(e)=>
-{
-    e.preventDefault();
-    if(!email || !password){
-        alert ("enter your email Id and password");
-        return
-    }
 
-    if (email==="cs22pankaj@svpkumta.in" && password==="admin"){
-        alert("Login sucessful");
-        return
-    }
-    else{
-        alert("please try one s agin");
-    }
+    {
+        e.preventDefault();
+        if (!email || !password)
+        {alert("enter your email  and password ");return}
+        
+        if(email==="svpkumta@gmail.com" && password==="admin")
+            {
+            alret("Login successful");
+            }
+        else{
+            alert("please try once again")
+        }
 }
-return (
-    <>
-    <div className="login">
-        <from onSubmit={handleSubmit}>
-            <h2 >
-                LOGIN FORM
-            </h2>
-            <div className="Input-Group">
-                <input type="email" placeholder='Enter Email' onChange={(e)=>setEmail(e.target.value)}></input>
-            </div>
-            <div className="Input-Group">
-            <input type="password" placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value)}></input>
-            </div>
-            <button onClick={handleSubmit}>Login</button>
 
+return(
+<>
+<div className='login'>
+    <from onSubmit={handleSubmit}>
+        <h2> LOGIN PAGE </h2>
+    EMAIL:<br/><input type="email" name="email" placeholder='enter yout email' on onChange={(e)=>setEmail(e.target.value)}/>
+    <br/>
+    PASSWORD:<br/><input type="password" name="password" placeholder='enter yout password' on onChange={(e)=>setPassword(e.target.value)}/>
+    <br/>
+
+    <button onClick={handleSubmit}>LOGIN</button>
     </from>
-    </div>
-    </>
+</div>
+</>
 )
 }
-
 export default Login;
